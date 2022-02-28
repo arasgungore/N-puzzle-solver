@@ -6,6 +6,7 @@
 #include <vector>
 
 
+// PathNode class declaration.
 class PathNode {
 private:
 	std::map<char, PathNode> childNodeList;

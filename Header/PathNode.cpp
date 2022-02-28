@@ -3,6 +3,7 @@
 #include <set>
 
 
+// An enum containing all possible directions of the movement.
 typedef enum {
 	LEFT = 'L',
 	RIGHT = 'R',
@@ -11,6 +12,7 @@ typedef enum {
 } Directions;
 
 
+// Creates a subtree connected to the current node with directions as their child nodes.
 void PathNode::createSubtree() {
 	static std::set<char> moves = {LEFT, RIGHT, UP, DOWN};
 	for(auto i = moves.begin(); i != moves.end(); i++)
@@ -18,6 +20,7 @@ void PathNode::createSubtree() {
 }
 
 
+// Adds a level to the bottom of the decision tree.
 void PathNode::addLevel() {
 	if(childNodeList.empty()) {
 		createSubtree();
@@ -28,6 +31,7 @@ void PathNode::addLevel() {
 }
 
 
+// Deletes the last level at the bottom of the decision tree.
 void PathNode::clearLastLevel() {
 	if(childNodeList.begin()->second.childNodeList.empty()) {
 		childNodeList.clear();
@@ -38,11 +42,13 @@ void PathNode::clearLastLevel() {
 }
 
 
+// Deletes the whole decision tree altogether when it is called from the root, otherwise deletes the current node's whole subtree instead.
 void PathNode::clearTree() {
 	childNodeList.clear();
 }
 
 
+// Returns TRUE if the given solution path is valid, FALSE otherwise.
 bool PathNode::checkSolution(const std::string &path, const std::vector<unsigned short> &puzzleBoard) {
 	for(size_t i = 0; i < puzzleBoard.size() - 1; i++)
 		if(puzzleBoard[i] != i + 1)
@@ -52,6 +58,8 @@ bool PathNode::checkSolution(const std::string &path, const std::vector<unsigned
 }
 
 
+// A recursive, backtracking algorithm which traverses the whole decision tree to find a valid solution path for the N-puzzle.
+// Returns TRUE if such solution path exists, FALSE otherwise.
 bool PathNode::checkAllPaths(std::string &path, std::vector<unsigned short> &puzzleBoard, const unsigned short &boardSize, unsigned short &emptySlotIndex) {
 	for(auto i = childNodeList.begin(); i != childNodeList.end(); i++) {
 		unsigned short changedElementIndex;

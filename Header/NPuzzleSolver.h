@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 
+
+// NPuzzleSolver class declaration.
 class NPuzzleSolver {
 private:
 	std::vector<unsigned short> puzzleBoard;

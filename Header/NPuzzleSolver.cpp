@@ -7,6 +7,8 @@
 
 #define MAX_NO_OF_LEVELS 25
 
+
+// Constructor for NPuzzleSolver.
 NPuzzleSolver::NPuzzleSolver(const std::string &puzzle) {
 	std::stringstream ss(puzzle);
 	unsigned short n;
@@ -19,6 +21,7 @@ NPuzzleSolver::NPuzzleSolver(const std::string &puzzle) {
 }
 
 
+// Prints a line separator to split the rows of the N-puzzle on the terminal.
 void NPuzzleSolver::printSeparator(const char &ch, const unsigned short &boxWidth, const unsigned short &boardSize) {
 	for(unsigned short i = 1; i < boardSize; i++)
 		std::cout << std::string(boxWidth, ch) << "|";
@@ -26,6 +29,7 @@ void NPuzzleSolver::printSeparator(const char &ch, const unsigned short &boxWidt
 }
 
 
+// Prints the N-puzzle on the terminal.
 void NPuzzleSolver::printPuzzle() const {
 	const unsigned short boxWidth = std::to_string(puzzleBoard.size()).length() + 2, boardSize = std::sqrt(puzzleBoard.size());
 	std::cout << "Board size: " << boardSize << std::endl;
@@ -53,6 +57,7 @@ void NPuzzleSolver::printPuzzle() const {
 }
 
 
+// Main method to solve the N-puzzle by adding a layer to the decision tree until either the solution is found or the MAX_NO_OF_LEVELS threshold is reached.
 void NPuzzleSolver::solve() {
 	std::string solution = "";
 	const unsigned short emptySlotIndex = distance(puzzleBoard.begin(), std::find(puzzleBoard.begin(), puzzleBoard.end(), 0)), boardSize = std::sqrt(puzzleBoard.size());
