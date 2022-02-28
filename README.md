@@ -3,10 +3,10 @@
 A C++ project which efficiently solves any given N-puzzle (aka 15 puzzle) using a backtracking algorithm on a decision tree.
 
 The program will write all steps without blank spaces or newline characters. Starting from the initial configuration:
-• For LEFT move, the program will write letter L,
-• For RIGHT move, the program will write letter R,
-• For UP move, the program will write letter U,
-• For DOWN move, the program will write letter D on the terminal.
+- For LEFT move, the program will write letter L,
+- For RIGHT move, the program will write letter R,
+- For UP move, the program will write letter U,
+- For DOWN move, the program will write letter D on the terminal.
 
 This project was assigned for the Introduction to Object-Oriented Programming (CMPE 160) course on Spring 2019 semester.
 Moreover, as stated in the introduction of the project description, this project has challenged me to build a chess bot
