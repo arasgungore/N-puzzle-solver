@@ -1,6 +1,12 @@
 # n-puzzle-solver
 
-A C++ project which solves puzzles from a decision tree using backtracking algorithms.
+A C++ project which efficiently solves any given N-puzzle (aka 15 puzzle) using a backtracking algorithm on a decision tree.
+
+The program will write all steps without blank spaces or newline characters. Starting from the initial configuration:
+• For LEFT move, the program will write letter L,
+• For RIGHT move, the program will write letter R,
+• For UP move, the program will write letter U,
+• For DOWN move, the program will write letter D on the terminal.
 
 
 
