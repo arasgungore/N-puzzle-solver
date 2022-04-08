@@ -1,4 +1,4 @@
-# n-puzzle-solver
+# N-puzzle-solver
 
 A C++ project which efficiently solves any given N-puzzle (aka 15 puzzle) using a backtracking algorithm on a decision tree.
 
