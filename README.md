@@ -18,8 +18,8 @@ test
 In this project, the main objective is developing a program that solves the puzzle
 game, whose rules are as follows:
 
-- Game table is anN xNtable whose cells are filled with numbers from 1
-  to (N^2 −1), and the remaining one is blank.
+- Game table is an NxN table whose cells are filled with numbers from 1
+  to (N^2 − 1), and the remaining one is blank.
 - Only the blank box can be moved on the table and the moving direction
   can be either horizontal or vertical (diagonal moves are not possible).
 - When the blank box is moved, the blank one and the box in the destination
